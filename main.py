@@ -1,12 +1,23 @@
+from stats import *
+
+
+
 def main():
-    book = get_books_text("/home/intelligentape/bookbot/books/frankenstein.txt")
-    print(book)
+    book = get_books_text("./books/frankenstein.txt")
+    # print(book)
+    words = count_words(book)
+    # print(
+    #     f"Found {words} total words"
+    # )
+
+    occurence = count_occurence(book)
+    # print(occurence)
+
+
+    occurence = sort(occurence)
+    path = "./books/frankenstein.txt"
+    printdic(occurence,path)
 
 
 
-def get_books_text(file_path):
-    with open (file_path) as f:
-        file_contents = f.read()
-        return file_contents
-    
 main()
