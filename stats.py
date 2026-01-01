@@ -33,12 +33,16 @@ def sort_on(items):
 
 
 
-def printdic(items, path):
+def printdic(path):
+    file_contents = get_books_text(path)
+    words = count_words(file_contents)
+    occurence = count_occurence(file_contents)
+    items = sort(occurence)
     print(
         f"============ BOOKBOT ============ \n"
         f"Analyzing book found at {path}...\n"
         f"----------- Word Count ----------\n"
-        f"Found 75767 total words\n"
+        f"Found {words} total words\n"
         f"--------- Character Count -------"
     )
     for dict in items:

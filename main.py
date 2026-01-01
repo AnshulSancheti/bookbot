@@ -1,23 +1,21 @@
 from stats import *
+import sys
+
 
 
 
 def main():
-    book = get_books_text("./books/frankenstein.txt")
-    # print(book)
-    words = count_words(book)
-    # print(
-    #     f"Found {words} total words"
-    # )
+    
 
-    occurence = count_occurence(book)
-    # print(occurence)
+    try:
+        path = sys.argv[1]
+        printdic(path)
+    except Exception as e:
+        print('Usage: python3 main.py <path_to_book>')
+        sys.exit(1)
 
-
-    occurence = sort(occurence)
-    path = "./books/frankenstein.txt"
-    printdic(occurence,path)
-
+    if sys.argv == 0:
+        raise Exception 
 
 
 main()
